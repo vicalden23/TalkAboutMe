@@ -18,6 +18,6 @@ var picSchema = new mongoose.Schema({
   not: {type: Number}
 })
 
-var Picture = mongoose.model('Picture', catSchema);
+var Picture = mongoose.model('Picture', picSchema);
 
-module.exports = Cat;
+module.exports = Picture;
