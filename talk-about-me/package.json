@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -16,7 +19,7 @@
     "eject": "react-scripts eject"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "index.js",
+  "main": "server.js",
   "author": "",
   "license": "ISC"
 }
