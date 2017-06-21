@@ -10,7 +10,7 @@ db.once('open', function() {
 
 var picSchema = new mongoose.Schema({
   image: {type: String, required:true},
-  name: {type: String, required:true},
+  name: {type: String},
   age: {type: Number},
   quote: {type: String},
   hot: {type: Number},

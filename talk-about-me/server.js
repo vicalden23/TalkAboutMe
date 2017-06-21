@@ -17,3 +17,27 @@ app.get('/pictures', function(req, res) {
     res.status(200).send(pictures);
   })
 });
+
+//POST a picture
+app.post('/pictures', function(req, res) {
+  Picture.findOne({image: req.body.image})
+    .exec(function(err, picture) {
+      if (!picture) {
+        var newPic = new Picture({
+          image: req.body.image,
+          name: req.body.name,
+          age: req.body.age,
+          quote: req.body.quote,
+          hot: req.body.hot,
+          regular: req.body.regular,
+          not: req.body.not
+        });
+        newPic.save(function(err, newPic) {
+          if(err) {
+            res.status(500).send(err);
+          }
+          res.status(201).send(newPic);
+        })
+      }
+    });
+});
