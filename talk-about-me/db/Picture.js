@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/talkaboutmedb');
 var db = mongoose.connection;
@@ -9,7 +10,7 @@ db.once('open', function() {
 })
 
 var picSchema = new mongoose.Schema({
-  image: {type: String, required:true},
+  image: {type: String},
   name: {type: String},
   age: {type: Number},
   quote: {type: String},

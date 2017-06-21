@@ -4,12 +4,13 @@ var Picture = require('./db/Picture.js');
 
 var app = express();
 
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/client'));
-app.listen(3000, function() {
-  console.log('LISTENING ON PORT 3000');
+app.listen(2323, function() {
+  console.log('LISTENING ON PORT 2323');
 });
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/client'));
 
 //Get all pictures
 app.get('/pictures', function(req, res) {
@@ -20,6 +21,7 @@ app.get('/pictures', function(req, res) {
 
 //POST a picture
 app.post('/pictures', function(req, res) {
+  console.log('REQ BODY', req.body);
   Picture.findOne({image: req.body.image})
     .exec(function(err, picture) {
       if (!picture) {
