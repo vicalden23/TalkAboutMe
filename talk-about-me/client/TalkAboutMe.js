@@ -5,6 +5,7 @@ class TalkAboutMe extends Component {
     super(props);
 
     this.state = {
+      words: 'It Works!'
     };
   }
 
@@ -13,6 +14,7 @@ class TalkAboutMe extends Component {
 
   render() {
     return (
+      {this.props.words}
     );
   };
 };
