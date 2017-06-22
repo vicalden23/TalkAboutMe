@@ -9,12 +9,12 @@ class TalkAboutMe extends Component {
     };
   }
 
-  componentDidMount() {
-  }
 
   render() {
     return (
-      {this.props.words}
+      <div>
+        {this.state.words}
+      </div>
     );
   };
 };

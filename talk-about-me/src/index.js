@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import TalkAboutMe from './client/TalkAboutMe';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" component={TalkAboutMe} />
+      </Switch>
+    </div>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();
