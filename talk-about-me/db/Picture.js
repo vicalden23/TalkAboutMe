@@ -6,8 +6,8 @@ var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('CONNETION TO talkaboutmedb IS OPEN')
-})
+  console.log('CONNETION TO talkaboutmedb IS OPEN');
+});
 
 var picSchema = new mongoose.Schema({
   image: {type: String},
@@ -17,7 +17,7 @@ var picSchema = new mongoose.Schema({
   hot: {type: Number},
   regular: {type: Number},
   not: {type: Number}
-})
+});
 
 var Picture = mongoose.model('Picture', picSchema);
 
