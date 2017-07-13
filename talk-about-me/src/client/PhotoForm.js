@@ -13,15 +13,20 @@ class PhotoForm extends Component {
     return (
       <Form>
         <Form.Field>
-          <label>First Name</label>
-          <input placeholder='First Name' />
+          <label>Name</label>
+          <input placeholder='Name' />
         </Form.Field>
         <Form.Field>
-          <label>Last Name</label>
-          <input placeholder='Last Name' />
+          <label>Image URL</label>
+          <input placeholder='www.image.com' />
         </Form.Field>
         <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
+          <label>Age</label>
+          <input />
+        </Form.Field>
+        <Form.Field>
+          <label>Quote</label>
+          <input />
         </Form.Field>
         <Button type='submit'>Submit</Button>
       </Form>
