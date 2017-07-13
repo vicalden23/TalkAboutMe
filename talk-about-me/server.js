@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/client'));
 app.get('/pictures', function(req, res) {
   Picture.find({}).exec(function(err, pictures) {
     res.status(200).send(pictures);
-  })
+  });
 });
 
 //POST a picture
@@ -39,7 +39,7 @@ app.post('/pictures', function(req, res) {
             res.status(500).send(err);
           }
           res.status(201).send(newPic);
-        })
+        });
       }
     });
 });

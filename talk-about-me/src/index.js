@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import TalkAboutMe from './client/TalkAboutMe';
+import PhotoForm from './client/PhotoForm';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
     <div>
       <Switch>
         <Route exact path="/" component={TalkAboutMe} />
+        <Route exact path="/new-photo" component={PhotoForm} />
       </Switch>
     </div>
   </BrowserRouter>,
