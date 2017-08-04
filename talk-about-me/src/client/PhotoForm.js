@@ -12,18 +12,42 @@ class PhotoForm extends Component {
       quote: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeUrl = this.handleChangeUrl.bind(this);
+    this.handleChangeAge = this.handleChangeAge.bind(this);
+    this.handleChangeQuote = this.handleChangeQuote.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleChangeName(event) {
+    console.log(event.target.value);
     this.setState({
-      name: event.target.name,
-      url: event.target.url});
+      name: event.target.value
+    });
+  }
+
+  handleChangeUrl(event) {
+    this.setState({
+      url: event.target.value
+    });
+  }
+
+  handleChangeAge(event) {
+    this.setState({
+      age: event.target.value
+    });
+  }
+
+  handleChangeQuote(event) {
+    this.setState({
+      quote: event.target.value
+    });
   }
 
   handleSubmit() {
+    console.log(this.state.name);
     console.log(this.state.url);
+
   }
 
   render() {
@@ -31,11 +55,11 @@ class PhotoForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
           <label>Name</label>
-          <input placeholder='Name' type="text" name={this.state.name} onChange={this.handleChange} />
+          <input placeholder='Name' type="text" value={this.state.name} onChange={this.handleChangeName}/>
         </Form.Field>
         <Form.Field>
           <label>Image URL</label>
-          <input placeholder='www.image.com' type="text" url={this.state.url} onChange={this.handleChange}/>
+          <input placeholder='www.image.com' type="text" value={this.state.url} onChange={this.handleChangeUrl}/>
         </Form.Field>
         <Form.Field>
           <label>Age</label>
