@@ -8,7 +8,7 @@ class PhotoForm extends Component {
     this.state = {
       name: '',
       url: '',
-      age: 0,
+      age: '',
       quote: ''
     };
 
@@ -45,9 +45,7 @@ class PhotoForm extends Component {
   }
 
   handleSubmit() {
-    console.log(this.state.name);
-    console.log(this.state.url);
-
+    console.log(this.state);
   }
 
   render() {
@@ -55,21 +53,22 @@ class PhotoForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
           <label>Name</label>
-          <input placeholder='Name' type="text" value={this.state.name} onChange={this.handleChangeName}/>
+          <input placeholder="Name" type="text" value={this.state.name} onChange={this.handleChangeName}/>
         </Form.Field>
         <Form.Field>
           <label>Image URL</label>
-          <input placeholder='www.image.com' type="text" value={this.state.url} onChange={this.handleChangeUrl}/>
+          <input placeholder="www.image.com" type="text" value={this.state.url} onChange={this.handleChangeUrl}/>
         </Form.Field>
         <Form.Field>
           <label>Age</label>
-          <input />
+          <input placeholder="21" type="text" value={this.state.age} onChange={this.handleChangeAge} />
         </Form.Field>
         <Form.Field>
           <label>Quote</label>
-          <input />
+          <input placeholder="Quote" type="text" value={this.state.quote} onChange={this.handleChangeQuote}
+          />
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Button type="submit">Submit</Button>
       </Form>
     )
   }
